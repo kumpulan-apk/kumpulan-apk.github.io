@@ -1,5 +1,11 @@
 # Kumpulan Aplikasi Android
 
+## Nulis
+
+Aplikasi untuk nulis-nulis
+
+[Download aplikasi nulis](https://github.com/mzaini30/nulis-ajah/blob/master/bin/Nulis.signed.apk?raw=true)
+
 ## Stok Barang
 
 Aplikasi yang memudahkan dalam mengelola stok barang.

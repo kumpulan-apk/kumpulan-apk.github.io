@@ -49,138 +49,140 @@
     </div>
 
     <html-vue
-      ><template id="v-844a85a2">
-        <table>
-          <tbody>
-            <tr>
-              <td>
+      ><template id="v-8813564c">
+    
+
+
+
+<table>
+    <tbody>
+        <tr>
+            <td>
                 <ol>
-                  <li v-for="x in table.sort()">
-                    <a href="" @click.prevent="pilihTable(x)"> {{ x }} </a>
-                  </li>
+
+                    <li v-for="x in table.sort()">
+                        <a href="" @click.prevent="pilihTable(x)">
+
+                            {{ x }}
+                        </a>
+                    </li>
                 </ol>
-              </td>
-              <td class="table-tengah">
+            </td>
+            <td class="table-tengah">
                 <h1>{{ terpilihJudul }}</h1>
                 <table v-if="terpilihIsi.length > 0">
-                  <thead>
-                    <tr>
-                      <th v-for="(x, n) in terpilihIsi[0]">{{ n }}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="x in terpilihIsi">
-                      <td v-for="n in x">{{ n }}</td>
-                    </tr>
-                  </tbody>
+                    <thead>
+                        <tr>
+                            <th v-for="(x, n) in terpilihIsi[0]">
+                                {{ n }}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="x in terpilihIsi">
+                            <td v-for="n in x">{{ n }}</td>
+                        </tr>
+                    </tbody>
                 </table>
-              </td>
-              <td>
+            </td>
+            <td>
                 <h2>Query</h2>
                 <form action="" @submit.prevent="jalankanQuery">
-                  <textarea
-                    name=""
-                    v-model="query"
-                    id=""
-                    cols="30"
-                    rows="10"
-                  ></textarea>
-                  <input type="submit" value="Olahin" />
+                    <textarea name="" v-model="query" id="" cols="30" rows="10"></textarea>
+                    <input type="submit" value="Olahin">
                 </form>
                 <table v-if="queryIsi.length > 0">
-                  <thead>
-                    <tr>
-                      <th v-for="(x, n) in queryIsi[0]">{{ n }}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="x in queryIsi">
-                      <td v-for="n in x">{{ n }}</td>
-                    </tr>
-                  </tbody>
+                    <thead>
+                        <tr>
+                            <th v-for="(x, n) in queryIsi[0]">{{ n }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="x in queryIsi">
+                            <td v-for="n in x">{{ n }}</td>
+                        </tr>
+                    </tbody>
                 </table>
-              </td>
-            </tr>
-          </tbody>
-        </table> </template
-      ><style>
-        li {
-          margin-bottom: 10px;
-        }
+            </td>
+        </tr>
+    </tbody>
+</table>
+    </template><style>
+    li {
+        margin-bottom: 10px;
+    }
 
-        td,
-        th {
-          border: 1px solid black;
-          padding: 10px;
-          vertical-align: top;
-        }
+    td,
+    th {
+        border: 1px solid black;
+        padding: 10px;
+        vertical-align: top;
+    }
 
-        table {
-          border-collapse: collapse;
-        }
+    table {
+        border-collapse: collapse;
+    }
 
-        input,
-        textarea {
-          display: block;
-          margin-bottom: 10px;
-        }
-        .table-tengah {
-          display: inline-block;
-          overflow: auto;
-          width: 50vw;
-        }
-      </style>
-      <script>
-        routes.push({
-          path: "/database",
-          component: {
-            template: "#v-844a85a2",
-
-            data() {
-              return {
+    input,
+    textarea {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .table-tengah {
+        display: inline-block;
+        overflow: auto;
+        width: 50vw;
+    }
+</style><script>
+routes.push({
+    path: '/database',
+    component: {
+        template: '#v-8813564c',
+        
+        data() {
+            return {
                 table: [],
-                terpilihJudul: "",
+                terpilihJudul: '',
                 terpilihIsi: [],
                 queryIsi: [],
-                query: "",
-              };
-            },
-            mounted() {
-              this.table = Object.keys(alasql.tables);
-              this.pilihTable(this.table.sort()[0]);
-            },
-            methods: {
-              pilihTable(table) {
+                query: ''
+            };
+        },
+        mounted() {
+            this.table = Object.keys(alasql.tables);
+            this.pilihTable(this.table.sort()[0]);
+        },
+        methods: {
+            pilihTable(table) {
                 this.terpilihJudul = table;
-                this.terpilihIsi = alasql("select * from " + table);
-              },
-              jalankanQuery() {
-                this.queryIsi = alasql(this.query);
-              },
+                this.terpilihIsi = alasql('select * from ' + table);
             },
-          },
-        });
-      </script>
-      <template id="v-eb9acbe1">
-        <h1 id="ini-judul">
-          <a aria-hidden="true" tabindex="-1" href="#ini-judul"
-            ><span class="icon icon-link"></span></a
-          >Ini Judul
-        </h1>
-        <h2 id="ini-subjudul">
-          <a aria-hidden="true" tabindex="-1" href="#ini-subjudul"
-            ><span class="icon icon-link"></span></a
-          >Ini Subjudul
-        </h2>
-      </template>
-      <script></script>
-      <script>
-        routes.push({
-          path: "/",
+            jalankanQuery() {
+                this.queryIsi = alasql(this.query);
+            }
+        }
+    
+    }
+});
+</script><template id="v-32d00e1c">
+          
+          
+          <h1 id="kumpulan-aplikasi-android"><a aria-hidden="true" tabindex="-1" href="#kumpulan-aplikasi-android"><span class="icon icon-link"></span></a>Kumpulan Aplikasi Android</h1>
+<h2 id="stok-barang"><a aria-hidden="true" tabindex="-1" href="#stok-barang"><span class="icon icon-link"></span></a>Stok Barang</h2>
+<p>Aplikasi yang memudahkan dalam mengelola stok barang.</p>
+<p><a href="https://github.com/mzaini30/stok-barang-apk/raw/master/bin/Stok%20Barang.signed.apk">Download aplikasi Stok Barang</a></p>
+<h2 id="todo"><a aria-hidden="true" tabindex="-1" href="#todo"><span class="icon icon-link"></span></a>TODO</h2>
+<p>Aplikasi TODO memudahkan dalam membuat perencanaan yang kemudian bisa kita centang kalau sudah selesai.</p>
+<p><a href="https://github.com/mzaini30/todo-baru/blob/master/bin/TODO.signed.apk?raw=true">Download aplikasi TODO</a></p>
+          </template><script>
+              
+          </script><script>
+      routes.push({
+          path: '/',
           component: {
-            template: "#v-eb9acbe1",
-          },
-        });
+              template: '#v-32d00e1c'
+          }
+      });
       </script></html-vue
     >
 
